@@ -1,9 +1,79 @@
+:root {
+  --bg-color: #0f0f0f;
+  --panel-color: #1a1a1a;
+  --text-color: #ffffff;
+  --soft-white: #e0e0e0;
+  --accent: #5eead4;
+  --accent-alt: #7dd3fc;
+  --accent-pink: #f472b6;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--soft-white);
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: var(--panel-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 999;
+  box-shadow: 0 0 15px #00000077;
+}
+
+nav a {
+  color: var(--soft-white);
+  margin-left: 90px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  padding: 0px 40px 0px;
+  min-height: 500px;
+  background-color: var(--bg-color);
+}
+
+h1, h2 {
+  color: #459ef1;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: var(--panel-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px #00000066;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px var(--accent-alt);
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
   scroll-behavior: smooth;
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', 'Poppins', sans-serif;
   background-color: #f4f4f4;
   color: #333;
 
@@ -18,12 +88,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
+  padding: 10px 100px;
   z-index: 1000;
 }
 
 .navbar img {
-  height: 40px;
+  height: 80px;
 }
 
 .nav-links {
@@ -131,4 +201,363 @@ img {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+/*APARTADO PARA OWN WORKS*/
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.8s ease;
+}
+
+.work-item:hover {
+  transform: scale(1.03);
+}
+
+.work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.work-img:hover {
+  filter: brightness(1.1);
+}
+
+/*PARA LOS POPUP DE LA GALERIA*/
+.popup {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: var(--panel-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--text-color);
+  max-width: 60vh;
+  width: 90%;
+  max-height: 80vh; /* NUEVO: evita que el popup crezca más de la pantalla */
+  overflow-y: auto;  /* NUEVO: activa scroll interno si el contenido es muy alto */
+}
+
+.popup-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  max-height: 90%; /* <-- NUEVO: limita la altura */
+  object-fit: contain; /* <-- NUEVO: ajusta imagen dentro del espacio */
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--accent);
+}
+/* Fade-in suave */
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.section-content p {
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+/* servicios work item */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.service-card p {
+  line-height: 1.8; /* Espacio entre líneas del párrafo */
+  text-align: center;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1rem;
+  max-width: 300px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  margin-bottom: 80px; 
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.service-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.featured-content {
+  text-align: center;
+  color: #ccc;
+}
+
+.featured-content img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+/* 🔹 FOOTER - Estilo elegante y oscuro */
+#footer {
+  background-color: #111; /* fondo oscuro */
+  color: #f0f0f0;         /* texto claro */
+  text-align: center;
+  padding: 10px 20px;
+  border-top: 2px solid #333;
+  font-family: 'Inter', 'Poppins', sans-serif; 
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.footer-logo {
+  display: block;             /* Hace que el img pueda centrarse con margin auto */
+  margin: 0 auto 10px auto;   /* Centrado horizontal y espacio inferior */
+  width: 100px;
+  height: auto;
+  margin-bottom: 1px;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.25);
+}
+
+#footer p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.scroll-top {
+  display: inline-block;
+  margin-top: 20px;
+  color: #00d1ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid #00d1ff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.scroll-top:hover {
+  background-color: #00d1ff;
+  color: #111;
+  transform: scale(1.05);
+}
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #f0f0f0;
+  margin: 0 20px;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent-alt);
+  transform: scale(1.2);
+}
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at 30% 30%, #00d1ff11 0%, transparent 70%),
+              radial-gradient(circle at 70% 60%, #7dd3fc22 0%, transparent 80%),
+              radial-gradient(circle at 50% 90%, #f472b622 0%, transparent 70%);
+  animation: floatBackground 20s infinite ease-in-out;
+}
+
+@keyframes floatBackground {
+  0% { background-position: 30% 30%, 70% 60%, 50% 90%; }
+  50% { background-position: 35% 35%, 65% 55%, 55% 85%; }
+  100% { background-position: 30% 30%, 70% 60%, 50% 90%; }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.slider-item img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.slider-item h3 {
+  margin: 15px 0 5px;
+  font-size: 1.4rem;
+}
+
+.slider-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* Espaciado reducido entre secciones */
+.section {
+  padding: 40px 0;
+}
+
+/* Título principal PORTAFOLIO con animación */
+.animated-title {
+  text-align: center;
+  font-size: 7rem;
+  margin-top: 220px;      /* Aumenta para bajarlo */
+  margin-bottom: 0px;   /* Reduce espacio antes de “Acerca de mí” */
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: brillo 2s infinite alternate;
+  line-height: 1.1;
+}
+
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Animación barra de navegación */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #111;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: top 0.3s;
+  z-index: 999;
+}
+
+nav.hide {
+  top: -80px;
 }

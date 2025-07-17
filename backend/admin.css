@@ -1,0 +1,103 @@
+/* Fondo general */
+body {
+  background-color: #111;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  color: #57b1ee;
+  margin-bottom: 30px;
+}
+
+/* Mensajes */
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Formulario */
+form {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #2d5fca;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #00cc99;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+th {
+  background-color: #222;
+  color: #41a7eb;
+}
+
+td form {
+  display: inline;
+}
+
+/* Imágenes miniatura */
+td img {
+  max-width: 80px;
+  border-radius: 5px;
+}
+
+/* Botones en tabla */
+table button {
+  padding: 5px 10px;
+  background-color: #2d5fca;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  margin: 2px;
+}
+
+table button:hover {
+  background-color: #00b38f;
+}
